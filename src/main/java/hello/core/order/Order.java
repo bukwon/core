@@ -1,5 +1,10 @@
 package hello.core.order;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Order {
     private Long memberId;
     private String itemName;
@@ -18,7 +23,7 @@ public class Order {
     }
 
 
-    public int getDiscountPrice() {
+    /*public int getDiscountPrice() {
         return discountPrice;
     }
 
@@ -32,7 +37,7 @@ public class Order {
 
     public int getItemPrice() {
         return itemPrice;
-    }
+    }*/
 
 
         @Override
