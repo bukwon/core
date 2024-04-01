@@ -15,11 +15,13 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberReposiroty());
     }
 
     @Bean
     public static MemoryMemberRepository memberReposiroty() {
+        System.out.println("call AppConfig.memberReposiroty");
         return new MemoryMemberRepository();
     }
 
