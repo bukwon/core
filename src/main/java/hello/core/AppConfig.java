@@ -9,6 +9,7 @@ import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class AppConfig {
@@ -19,6 +20,7 @@ public class AppConfig {
         return new MemberServiceImpl(memberRepository());
     }
 
+    @Primary
     @Bean
     public static MemoryMemberRepository memberRepository() {
         System.out.println("call AppConfig.memberRepository");
@@ -31,6 +33,7 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
+    @Primary
     @Bean
     public DiscountPolicy discountPolicy() {
 //        return new FixDiscountPolicy();
